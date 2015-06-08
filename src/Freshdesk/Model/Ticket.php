@@ -17,6 +17,8 @@ class Ticket extends Base
     const SOURCE_TWITTER = 5;
     const SOURCE_FACEBOOK = 6;
     const SOURCE_CHAT = 7;
+    const SOURCE_MOBIHELP = 8;
+    const SOURCE_WIDGET = 9;
 
     const PRIORITY_LOW = 1;
     const PRIORITY_MEDIUM = 2;
@@ -80,6 +82,16 @@ class Ticket extends Base
      * @var int
      */
     protected $priority = 1;
+
+    /**
+     * @var int
+     */
+    protected $source = static::SOURCE_PORTAL;
+
+    /**
+     * @var int
+     */
+    protected $groupId = null;
 
     /**
      * @var int
@@ -540,7 +552,9 @@ class Ticket extends Base
                 'subject'       => $this->subject,
                 'email'         => $this->email,
                 'priority'      => $this->priority,
-                'status'        => $this->status
+                'status'        => $this->status,
+                'source'        => $this->source,
+                'group_id'      => $this->groupId
             ),
             'cc_emails' => $this->getCcEmailVal()
         );
