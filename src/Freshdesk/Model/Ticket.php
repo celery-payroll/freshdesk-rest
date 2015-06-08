@@ -86,7 +86,7 @@ class Ticket extends Base
     /**
      * @var int
      */
-    protected $source = static::SOURCE_PORTAL;
+    protected $source = self::SOURCE_PORTAL;
 
     /**
      * @var int
@@ -208,6 +208,42 @@ class Ticket extends Base
     public function getPriority()
     {
         return $this->priority;
+    }
+
+    /**
+     * @param int $p
+     * @return $this
+     */
+    public function setGroupId($p)
+    {
+        $this->groupId = (int) $p;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getGroupId()
+    {
+        return $this->groupId;
+    }
+
+    /**
+     * @param int $p
+     * @return $this
+     */
+    public function setSource($p)
+    {
+        $this->source = (int) $p;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSource()
+    {
+        return $this->source;
     }
 
     /**
