@@ -7,7 +7,6 @@ use \DateTime,
 
 class Ticket extends Base
 {
-
     const RESPONSE_KEY = 'helpdesk_ticket';
 
     const SOURCE_EMAIL = 1;
