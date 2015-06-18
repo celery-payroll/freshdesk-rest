@@ -71,6 +71,11 @@ class Ticket extends Base
     /**
      * @var string
      */
+    protected $name = null;
+
+    /**
+     * @var string
+     */
     protected $email = null;
 
     /**
@@ -164,6 +169,24 @@ class Ticket extends Base
     public function getSubject()
     {
         return $this->subject;
+    }
+
+    /**
+     * @param string $name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -587,6 +610,7 @@ class Ticket extends Base
                 'description'   => $this->description,
                 'subject'       => $this->subject,
                 'email'         => $this->email,
+                'name'          => $this->name,
                 'priority'      => $this->priority,
                 'status'        => $this->status,
                 'source'        => $this->source,
